@@ -123,7 +123,6 @@ const Home = () => {
     };
 
     const onFinishEditContact = async (values) => {
-        values.createdUserID = userId;
         try {
             await axios.put(`http://localhost:5111/api/contact/${selectedRowKeys}`, values);
             message.success(

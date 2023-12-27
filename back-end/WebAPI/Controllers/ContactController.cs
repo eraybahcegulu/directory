@@ -78,6 +78,10 @@ public class ContactController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateContact(int id, [FromBody] ContactViewModel item)
     {
+        var contact = _contactManager.FindAsync(id).Result;
+
+        item.CreatedUserID = contact.CreatedUserID;
+
         try
         {
             Contact c = new() //temsil edecek nesne oluşturma
