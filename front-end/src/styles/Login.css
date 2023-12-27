@@ -1,0 +1,29 @@
+.bg-gradient-to-b {
+    background: linear-gradient(to bottom, var(--from-color), var(--to-color));
+}
+
+.from-color{
+    --from-color: #374151;
+}
+
+.to-color {
+    --to-color: #030712;
+}
+
+.ant-btn-primary {
+    background-color: #1677ff;
+}
+
+.ant-switch-checked {
+    background-color: #1677ff;
+}
+
+
+.ant-switch{
+    background-color: #494f58;
+}
+
+.ant-switch:hover{
+    border: solid 1px rgb(43, 122, 241);
+    scale: 1.2;
+}
