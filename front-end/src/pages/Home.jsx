@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ContactList from "../components/ContactList";
 import { UserAddOutlined, EditOutlined, DeleteOutlined, SearchOutlined } from "@ant-design/icons";
-import { Input, Modal, Button, Form, message, Result } from "antd";
+import { Input, Modal, Button, Form, message, Result, Spin } from "antd";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { fetchContactData } from '../redux-toolkit/contactSlice';
@@ -22,6 +22,7 @@ const Home = () => {
     const [userEmail, setEmail] = useState('')
 
     const [failedAuth, setFailedAuth] = useState(false);
+    const [userInfoLoading, setUserInfoLoading] = useState(true);
 
     const location = useLocation();
 
@@ -48,6 +49,7 @@ const Home = () => {
             setUserId(response.data.id);
             setUserName(response.data.username);
             setEmail(response.data.email);
+            setUserInfoLoading(false);
 
             console.log(userInfo);
         } catch (error) {
@@ -183,11 +185,27 @@ const Home = () => {
 
                         <div className="mt-20 flex flex-col justify-center items-center gap-2 border border-black border-1 rounded-xl p-2">
 
-                            <span>Hoşgeldin {userName}</span>
-                            <span>{userEmail}</span>
-                            <Button onClick={logout} type="primary" danger>
-                                Çıkış
-                            </Button>
+                            {
+                                (userInfoLoading)
+                                    ?
+                                    (
+                                        <Spin size="large" />
+                                    )
+
+                                    :
+                                    (
+                                        <>
+                                            <span>Hoşgeldin {userName}</span>
+                                            <span>{userEmail}</span>
+                                            <Button onClick={logout} type="primary" danger>
+                                                Çıkış
+                                            </Button>
+                                        </>
+
+                                    )
+
+                            }
+
 
 
                         </div>
