@@ -52,7 +52,8 @@ namespace WebAPI.Controllers
                             var username = user.UserName;
                             var email = user.Email;
                             var id = user.Id;
-                            return Ok(new { username, email,id });
+                            var securityStamp = user.SecurityStamp;
+                            return Ok(new { username, email,id, securityStamp });
                         }
                     }
                 }
@@ -88,6 +89,7 @@ namespace WebAPI.Controllers
                         {
                             var id = user.Id;
                             var username = user.UserName;
+                            var securityStamp = user.SecurityStamp;
 
                             var tokenHandler = new JwtSecurityTokenHandler();
                             var key = Encoding.ASCII.GetBytes("eraybahcegulu_key");
@@ -108,8 +110,8 @@ namespace WebAPI.Controllers
                             {
                                 Message = "Giriş başarılı",
                                 Token = tokenHandler.WriteToken(token),
-                                id,
-                                username
+
+                                securityStamp
                             });
                         }
                     }

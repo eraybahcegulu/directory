@@ -192,8 +192,8 @@ namespace DAL.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedDate", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Status", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { -2, 0, "14959cf4-4934-4630-ba1c-733c59353038", new DateTime(2023, 12, 27, 16, 32, 24, 457, DateTimeKind.Local).AddTicks(2714), "admin2@admin.com", false, false, null, "admin2", null, null, "AQAAAAIAAYagAAAAEBXzJO7QnqSkL6wmyuSwg0MKYU8qCrJ4c1xVtFUToutra04xJnPV7AhPRAejR7hwzg==", null, false, null, 1, false, "admin2" },
-                    { -1, 0, "f0bd7c8e-4746-4188-96fb-739d9be046ee", new DateTime(2023, 12, 27, 16, 32, 24, 379, DateTimeKind.Local).AddTicks(5172), "admin@admin.com", false, false, null, "admin", null, null, "AQAAAAIAAYagAAAAEIGxP0xKQDfkNK5E6KsVHDcIvxZeRn3dfKP3j7iBTUQxw1EaKra2SQb/VYhVLK3f7g==", null, false, null, 1, false, "admin" }
+                    { -2, 0, "09eaa96f-3e6a-41e1-a86a-928eeef9de5d", new DateTime(2023, 12, 28, 12, 20, 29, 591, DateTimeKind.Local).AddTicks(335), "admin2@admin.com", false, false, null, "admin2", null, null, "AQAAAAIAAYagAAAAEDQACeT/7BnPW7mbvQo//PsAaQyBgl9T445LkHeR4bfbW16dPrCuhjvWV2BPF0myfQ==", null, false, null, 1, false, "admin2" },
+                    { -1, 0, "b6d672a4-8cff-4d19-81bb-ea107f611e14", new DateTime(2023, 12, 28, 12, 20, 29, 523, DateTimeKind.Local).AddTicks(8423), "admin@admin.com", false, false, null, "admin", null, null, "AQAAAAIAAYagAAAAEOoyEvJINIsFvpz6+H+RPHScFnkVj7AM7yl2uzksSKC0kxywt/N540EaBj8Ud3JuOg==", null, false, null, 1, false, "admin" }
                 });
 
             migrationBuilder.CreateIndex(

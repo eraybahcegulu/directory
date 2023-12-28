@@ -14,15 +14,17 @@ const LoginForm = () => {
             setIsLogin(true);
             const res = await axios.post("http://localhost:5111/api/Account/Login", values);
             const token = res.data.token;
+            const securityStamp = res.data.securityStamp;
 
             if (isChecked === true) {
 
                 localStorage.setItem("token", token);
-
+                localStorage.setItem("securityStamp", securityStamp);
             }
             else {
 
                 sessionStorage.setItem("token", token);
+                sessionStorage.setItem("securityStamp", securityStamp);
             }
 
             navigate(`/home`, { state: { token } });

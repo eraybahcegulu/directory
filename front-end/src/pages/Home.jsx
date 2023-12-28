@@ -28,6 +28,7 @@ const Home = () => {
 
     const token = location.state?.token.toString() || localStorage.getItem('token');
 
+
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
@@ -46,17 +47,27 @@ const Home = () => {
 
             const response = await axios.get("http://localhost:5111/api/Account/", userToken);
             const userInfo = response.data;
+
+            console.log(response.data.securityStamp)
+            if(response.data.securityStamp !== (localStorage.getItem('securityStamp') || sessionStorage.getItem('securityStamp')))
+            {
+                localStorage.clear();
+                sessionStorage.clear();
+                return setFailedAuth(true);
+            }
+
             setUserId(response.data.id);
             setUserName(response.data.username);
             setEmail(response.data.email);
             setUserInfoLoading(false);
+            
 
             console.log(userInfo);
         } catch (error) {
             if (error.response && error.response.status === 401) {
-                setFailedAuth(true);
                 sessionStorage.clear();
                 localStorage.clear();
+                return setFailedAuth(true);
             } else {
                 message.error(
                     <span>
@@ -160,6 +171,8 @@ const Home = () => {
     }
 
     const handle404 = () => {
+        localStorage.clear();
+        sessionStorage.clear();
         navigate('/');
     };
 

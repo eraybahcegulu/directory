@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20231227133225_mig1")]
+    [Migration("20231228092030_mig1")]
     partial class mig1
     {
         /// <inheritdoc />
@@ -146,13 +146,13 @@ namespace DAL.Migrations
                         {
                             Id = -1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f0bd7c8e-4746-4188-96fb-739d9be046ee",
-                            CreatedDate = new DateTime(2023, 12, 27, 16, 32, 24, 379, DateTimeKind.Local).AddTicks(5172),
+                            ConcurrencyStamp = "b6d672a4-8cff-4d19-81bb-ea107f611e14",
+                            CreatedDate = new DateTime(2023, 12, 28, 12, 20, 29, 523, DateTimeKind.Local).AddTicks(8423),
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             Name = "admin",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIGxP0xKQDfkNK5E6KsVHDcIvxZeRn3dfKP3j7iBTUQxw1EaKra2SQb/VYhVLK3f7g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOoyEvJINIsFvpz6+H+RPHScFnkVj7AM7yl2uzksSKC0kxywt/N540EaBj8Ud3JuOg==",
                             PhoneNumberConfirmed = false,
                             Status = 1,
                             TwoFactorEnabled = false,
@@ -162,13 +162,13 @@ namespace DAL.Migrations
                         {
                             Id = -2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "14959cf4-4934-4630-ba1c-733c59353038",
-                            CreatedDate = new DateTime(2023, 12, 27, 16, 32, 24, 457, DateTimeKind.Local).AddTicks(2714),
+                            ConcurrencyStamp = "09eaa96f-3e6a-41e1-a86a-928eeef9de5d",
+                            CreatedDate = new DateTime(2023, 12, 28, 12, 20, 29, 591, DateTimeKind.Local).AddTicks(335),
                             Email = "admin2@admin.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             Name = "admin2",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBXzJO7QnqSkL6wmyuSwg0MKYU8qCrJ4c1xVtFUToutra04xJnPV7AhPRAejR7hwzg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDQACeT/7BnPW7mbvQo//PsAaQyBgl9T445LkHeR4bfbW16dPrCuhjvWV2BPF0myfQ==",
                             PhoneNumberConfirmed = false,
                             Status = 1,
                             TwoFactorEnabled = false,
